@@ -13,6 +13,6 @@ config :logger, level: :warn
 config :obesebird_api, ObesebirdApi.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "obesebird_api_test",
   size: 1 # Use a single connection for transactional tests

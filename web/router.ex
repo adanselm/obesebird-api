@@ -1,25 +1,17 @@
 defmodule ObesebirdApi.Router do
   use ObesebirdApi.Web, :router
 
-  pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-  end
-
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/", ObesebirdApi do
-    pipe_through :browser # Use the default browser stack
+  scope "/api", ObesebirdApi do
+    pipe_through :api
 
-    get "/", PageController, :index
+    scope "/v1", V1, as: :v1 do
+      resources "/categories", CategoryController, except: [:new, :edit]
+      resources "/posts", PostController, except: [:new, :edit]
+      resources "/slots", SlotController, except: [:new, :edit]
+    end
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", ObesebirdApi do
-  #   pipe_through :api
-  # end
 end

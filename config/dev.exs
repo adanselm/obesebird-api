@@ -30,6 +30,6 @@ config :logger, :console, format: "[$level] $message\n"
 config :obesebird_api, ObesebirdApi.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "obesebird_api_dev",
   size: 10 # The amount of database connections in the pool
