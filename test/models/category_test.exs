@@ -3,7 +3,7 @@ defmodule ObesebirdApi.CategoryTest do
 
   alias ObesebirdApi.Category
 
-  @valid_attrs %{title: "some content"}
+  @valid_attrs %{name: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

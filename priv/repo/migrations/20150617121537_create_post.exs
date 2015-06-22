@@ -3,7 +3,9 @@ defmodule ObesebirdApi.Repo.Migrations.CreatePost do
 
   def change do
     create table(:posts) do
-      add :message, :string
+      add :text, :string
+      add :last_submission_date, :datetime
+      add :is_queued, :boolean, default: false
       add :category_id, :integer
 
       timestamps

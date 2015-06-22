@@ -3,7 +3,7 @@ defmodule ObesebirdApi.SlotTest do
 
   alias ObesebirdApi.Slot
 
-  @valid_attrs %{category: nil, day: 42, hour: 42, min: 42}
+  @valid_attrs %{category: nil, day_of_week: 42, hour: 42, min: 42}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

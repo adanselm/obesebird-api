@@ -2,7 +2,7 @@ defmodule ObesebirdApi.V1.SlotControllerTest do
   use ObesebirdApi.ConnCase
 
   alias ObesebirdApi.Slot
-  @valid_attrs %{day: 42, hour: 42, min: 42}
+  @valid_attrs %{day_of_week: 42, hour: 42, min: 42}
   @invalid_attrs %{}
 
   setup do
@@ -19,7 +19,11 @@ defmodule ObesebirdApi.V1.SlotControllerTest do
     slot = Repo.insert %Slot{}
     conn = get conn, v1_slot_path(conn, :show, slot)
     assert json_response(conn, 200)["data"] == %{
-      "id" => slot.id
+      "id" => slot.id,
+      "category_id" => slot.category_id,
+      "day_of_week" => slot.day_of_week,
+      "hour" => slot.hour,
+      "min" => slot.min
     }
   end
 

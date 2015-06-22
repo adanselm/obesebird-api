@@ -10,6 +10,7 @@ defmodule ObesebirdApi.V1.SlotView do
   end
 
   def render("slot.json", %{slot: slot}) do
-    %{id: slot.id}
+    %{id: slot.id, day_of_week: slot.day_of_week, hour: slot.hour,
+      min: slot.min, category_id: slot.category_id}
   end
 end

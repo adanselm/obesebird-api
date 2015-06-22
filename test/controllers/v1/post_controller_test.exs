@@ -2,7 +2,7 @@ defmodule ObesebirdApi.V1.PostControllerTest do
   use ObesebirdApi.ConnCase
 
   alias ObesebirdApi.Post
-  @valid_attrs %{message: "some content"}
+  @valid_attrs %{is_queued: true, last_submission_date: %{day: 17, hour: 14, min: 0, month: 4, year: 2010}, text: "some content"}
   @invalid_attrs %{}
 
   setup do
@@ -19,7 +19,12 @@ defmodule ObesebirdApi.V1.PostControllerTest do
     post = Repo.insert %Post{}
     conn = get conn, v1_post_path(conn, :show, post)
     assert json_response(conn, 200)["data"] == %{
-      "id" => post.id
+      "id" => post.id,
+      "category_id" => post.category_id,
+      "creation_date" => Ecto.DateTime.to_iso8601(post.inserted_at),
+      "is_queued" => post.is_queued,
+      "last_submission_date" => post.last_submission_date,
+      "text" => post.text
     }
   end
 

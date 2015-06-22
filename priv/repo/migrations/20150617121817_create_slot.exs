@@ -3,7 +3,7 @@ defmodule ObesebirdApi.Repo.Migrations.CreateSlot do
 
   def change do
     create table(:slots) do
-      add :day, :integer
+      add :day_of_week, :integer
       add :hour, :integer
       add :min, :integer
       add :category_id, :integer

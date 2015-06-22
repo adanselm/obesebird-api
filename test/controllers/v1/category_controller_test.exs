@@ -2,7 +2,7 @@ defmodule ObesebirdApi.V1.CategoryControllerTest do
   use ObesebirdApi.ConnCase
 
   alias ObesebirdApi.Category
-  @valid_attrs %{title: "some content"}
+  @valid_attrs %{name: "some content"}
   @invalid_attrs %{}
 
   setup do
@@ -19,7 +19,8 @@ defmodule ObesebirdApi.V1.CategoryControllerTest do
     category = Repo.insert %Category{}
     conn = get conn, v1_category_path(conn, :show, category)
     assert json_response(conn, 200)["data"] == %{
-      "id" => category.id
+      "id" => category.id,
+      "name" => category.name
     }
   end
 

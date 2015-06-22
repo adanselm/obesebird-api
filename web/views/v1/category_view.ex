@@ -10,6 +10,6 @@ defmodule ObesebirdApi.V1.CategoryView do
   end
 
   def render("category.json", %{category: category}) do
-    %{id: category.id}
+    %{id: category.id, name: category.name}
   end
 end

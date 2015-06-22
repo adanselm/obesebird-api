@@ -10,6 +10,9 @@ defmodule ObesebirdApi.V1.PostView do
   end
 
   def render("post.json", %{post: post}) do
-    %{id: post.id}
+    %{id: post.id, text: post.text, category_id: post.category_id,
+    creation_date: post.inserted_at,
+    last_submission_date: post.last_submission_date,
+    is_queued: post.is_queued }
   end
 end

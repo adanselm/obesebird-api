@@ -2,7 +2,7 @@ defmodule ObesebirdApi.Slot do
   use ObesebirdApi.Web, :model
 
   schema "slots" do
-    field :day, :integer
+    field :day_of_week, :integer
     field :hour, :integer
     field :min, :integer
     belongs_to :category, ObesebirdApi.Category
@@ -10,7 +10,7 @@ defmodule ObesebirdApi.Slot do
     timestamps
   end
 
-  @required_fields ~w(day hour min)
+  @required_fields ~w(day_of_week hour min)
   @optional_fields ~w()
 
   @doc """

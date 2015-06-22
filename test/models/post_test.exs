@@ -3,7 +3,7 @@ defmodule ObesebirdApi.PostTest do
 
   alias ObesebirdApi.Post
 
-  @valid_attrs %{category: nil, message: "some content"}
+  @valid_attrs %{category: nil, text: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

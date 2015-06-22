@@ -3,7 +3,7 @@ defmodule ObesebirdApi.Repo.Migrations.CreateCategory do
 
   def change do
     create table(:categories) do
-      add :title, :string
+      add :name, :string
 
       timestamps
     end

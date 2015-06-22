@@ -2,12 +2,12 @@ defmodule ObesebirdApi.Category do
   use ObesebirdApi.Web, :model
 
   schema "categories" do
-    field :title, :string
+    field :name, :string
 
     timestamps
   end
 
-  @required_fields ~w(title)
+  @required_fields ~w(name)
   @optional_fields ~w()
 
   @doc """
