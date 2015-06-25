@@ -34,6 +34,8 @@ defmodule ObesebirdApi.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 1.0"},
      {:phoenix_live_reload, "~> 0.4", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:oauth, github: "tim/erlang-oauth"},
+     {:extwitter, "~> 0.2"}]
   end
 end

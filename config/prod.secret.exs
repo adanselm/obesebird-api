@@ -9,9 +9,12 @@ config :obesebird_api, ObesebirdApi.Endpoint,
 # Configure your database
 config :obesebird_api, ObesebirdApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DATABASE_USER"),
-  password: System.get_env("DATABASE_PASSWORD"),
-  database: System.get_env("DATABASE_NAME"),
-  hostname: System.get_env("DATABASE_HOSTNAME"),
-  port: System.get_env("DATABASE_PORT"),
+  url: {:system, "DATABASE_URL"},
   size: 20 # The amount of database connections in the pool
+
+config :ex_twitter, :oauth, [
+   consumer_key: System.get_env("CONSUMER_KEY"),
+   consumer_secret: System.get_env("CONSUMER_SECRET"),
+   access_token: System.get_env("ACCESS_TOKEN"),
+   access_token_secret: System.get_env("ACCESS_SECRET")
+]
