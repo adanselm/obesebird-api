@@ -11,8 +11,8 @@ defmodule ObesebirdApi do
       supervisor(ObesebirdApi.Endpoint, []),
       # Start the Ecto repository
       worker(ObesebirdApi.Repo, []),
-      # Here you could define other workers and supervisors as children
-      # worker(ObesebirdApi.Worker, [arg1, arg2, arg3]),
+      # Start the tweets scheduler
+      worker(ObesebirdApi.Scheduler, [[name: ObesebirdApi.Scheduler]]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
