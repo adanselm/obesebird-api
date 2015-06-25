@@ -11,7 +11,7 @@ defmodule ObesebirdApi.Slot do
   end
 
   @required_fields ~w(day_of_week hour min)
-  @optional_fields ~w()
+  @optional_fields ~w(category_id)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

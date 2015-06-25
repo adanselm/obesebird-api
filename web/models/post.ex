@@ -11,7 +11,7 @@ defmodule ObesebirdApi.Post do
   end
 
   @required_fields ~w(text)
-  @optional_fields ~w(last_submission_date is_queued)
+  @optional_fields ~w(last_submission_date is_queued category_id)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
